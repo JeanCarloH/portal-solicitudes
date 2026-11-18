@@ -1,6 +1,32 @@
 @Solicitudes.Api_HostAddress = http://localhost:5150
 
-GET {{Solicitudes.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+### Crear solicitud
+POST {{Solicitudes.Api_HostAddress}}/api/requests
+Content-Type: application/json
 
-###
+{
+  "externalReference": "REF-001",
+  "customerId": "CLI-10",
+  "serviceCode": "SRV-5",
+  "description": "Instalación de medidor"
+}
+
+### Reintento con la misma referencia (debe devolver 200 con la misma solicitud)
+POST {{Solicitudes.Api_HostAddress}}/api/requests
+Content-Type: application/json
+
+{
+  "externalReference": "REF-001",
+  "customerId": "CLI-10",
+  "serviceCode": "SRV-5",
+  "description": "Instalación de medidor"
+}
+
+### Misma referencia con datos diferentes (debe devolver 409)
+POST {{Solicitudes.Api_HostAddress}}/api/requests
+Content-Type: application/json
+
+{
+  "externalReference": "REF-001",
+  "customerId": "CLI-99",
+  "serviceCode":
