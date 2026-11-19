@@ -25,7 +25,7 @@ public class SolicitudesDbContext : DbContext
             entity.Property(r => r.ServiceCode).HasMaxLength(50).IsRequired();
             entity.Property(r => r.Description).HasMaxLength(500).IsRequired();
 
-            entity.Property(r => r.Status).HasConversion<string>().HasMaxLength(20);
+            entity.Property(r => r.Status).HasConversion<string>().HasMaxLength(20).IsConcurrencyToken();
             entity.HasIndex(r => r.Status);
 
             entity.Property(r => r.LastError).HasMaxLength(1000);
