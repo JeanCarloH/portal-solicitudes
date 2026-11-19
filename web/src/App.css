@@ -1,0 +1,85 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form input,
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form button {
+  grid-column: span 2;
+  padding: 10px;
+  background: #1f3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form button:disabled {
+  opacity: 0.6;
+}
+
+.message {
+  margin-top: 12px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.message.success { background: #e6f4ea; color: #1e6b34; }
+.message.info { background: #e8f0fe; color: #1a4b9c; }
+.message.error { background: #fdecea; color: #a12b1f; }
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.85em;
+}
+
+.status.pending { background: #fff4e5; color: #8a5300; }
+.status.processing { background: #e8f0fe; color: #1a4b9c; }
+.status.completed { background: #e6f4ea; color: #1e6b34; }
+.status.failed { background: #fdecea; color: #a12b1f; }
